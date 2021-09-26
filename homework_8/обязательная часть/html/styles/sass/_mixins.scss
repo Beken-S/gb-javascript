@@ -1,0 +1,70 @@
+//Шрифт
+@mixin font(
+  $size: $site-font-size,
+  $weight: $site-font-weight,
+  $color: $site-font-color,
+  $line-height: $site-line-height,
+  $family: $site-font-family
+) {
+  font: {
+    weight: $weight;
+    size: $size;
+    family: $family;
+  }
+  line-height: $line-height;
+  color: $color;
+}
+@mixin font-null {
+  font: {
+    size: 0;
+  }
+  line-height: 0;
+}
+
+//Центрирующий контейнер
+@mixin container($width, $padding) {
+  max-width: $width;
+  margin: 0 auto;
+  padding: 0 $padding;
+}
+
+@mixin stretching {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+//Анимации
+@mixin zoom {
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+// Медиа запросы
+@mixin bp-0 {
+  @media (max-width: 1600px) {
+    @content;
+  }
+}
+@mixin bp-1 {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin bp-2 {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin bp-3 {
+  @media (max-width: 374px) {
+    @content;
+  }
+}
+@mixin bp-4 {
+  @media (min-width: 780px) and (max-width: $container-width + 50px) {
+    @content;
+  }
+}
