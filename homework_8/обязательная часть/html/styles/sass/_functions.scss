@@ -1,0 +1,5 @@
+@function lin-interpol($f1, $f2, $x1, $x2, $f) {
+    $a: math.div($x2 - $x1, $f2 - $f1);
+    $b: $f1 * $a;
+    @return #{"#{$x1}px + #{$f} * #{$a} - #{$b}px"};
+}
