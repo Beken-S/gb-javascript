@@ -100,7 +100,7 @@ class ProductCard {
     // Префикс для id кнопок.
     this.idPrefix = "product-";
     this.card = document.createElement("figure");
-    this.card.classList = "product-card";
+    this.card.classList.add("product-card");
     this.card.insertAdjacentHTML("afterbegin", this.getCardMarkup(product));
   }
 

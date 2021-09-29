@@ -31,7 +31,6 @@ class Cart {
    */
   getDataTable() {
     const table = [];
-    let id = null;
     for (let i = 0, row = 0; i < this.itemCount; i++) {
       if (i < this.penultItem && this.cart[i].pId === this.cart[i + 1].pId) {
         continue;
